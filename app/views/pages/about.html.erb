@@ -1,0 +1,56 @@
+<h1>Project Pokemon Card Game</h1>
+<p>
+This project was designed to pull data from Pokémon TCG Developers API.
+The data source structure is:
+<li>name: The card name. Put the name in double quotes for an exact match, otherwise partial matching will be applied.</li>
+<li>id: A unique id for this card. It is made up by taking the set code and concatenating the card number to it. (ex. xy1-1)</li>
+<li>nationalPokedexNumber: The national pokedex number for a card that features a Pokémon supertype.</li>
+<li>types: The types of the card. These typically appear in the top right of card, and are denoted by energy symbol (ex. Fire, Fighting, Psychic, etc.)</li>
+<li>subtype: The subtype of the card. Examples include MEGA, Stage 1, BREAK, Supporter, etc.</li>
+<li>supertype: The supertype of the card. Either Pokémon, Trainer, or Energy.</li>
+<li>hp: The hit points of the card. This typically appears in the top right corner of the card.</li>
+<li>number: The number of the card for the set it was released in. Found on the bottom right side of the card.</li>
+<li>artist: The artist of the card.</li>
+<li>rarity: The rarity of the card (ex. Rare, Rare Holo, Common, etc.)</li>
+<li>series: The series the card appears in (ex. Base, XY, EX, etc.)></li>
+<li>set: The set the card appears in (ex. BREAKthrough, Phantom Forces, Jungle, etc.)</li>
+<li>setCode: The unique code of the set (ex. base1, xy5, ex3)</li>
+<li>retreatCost: The amount of energy it takes to retreat. Found on the bottom of the card.</li>
+<li>convertedRetreatCost: The retreat cost represented as a number.</li>
+<li>text: Any additional text on a card. This includes special rules (like MEGA rules or EX), and text that appears on Trainer cards.</li>
+<li>attack: The attack damage of any given attack for a card</li>
+<li>attackCost: The energy cost of a given attack for a card</li>
+<li>attackName: The name of an attack</li>
+<li>attackText: The text description of an attack</li>
+<li>special: The special attack damage that gives more damage than a regular attack</li>
+<li>weaknesses: The weaknesses of the card (ex. Fire, Water, Grass)</li>
+<li>resistances: The resistances of the card (ex. Fire, Water, Grass)</li>
+<li>ancientTrait: The Ancient Trait of the card (if exists)</li>
+<li>abilityName: The name of the ability</li>
+<li>abilityText: The text of the ability</li>
+<li>abilityType: The type of the ability (such as Poké-Power, Poké-Body, Pokémon Power or Ability)</li>
+<li>evolvesFrom: The evolution of a card (what Pokémon it evolves from)</li>
+<li>contains: Filter on cards that contain a specific field in the JSON response (ex. ?contains=ancientTrait)</li>
+<li>imageUrl: The image url for a card.</li>
+<li>imageUrlHiRes: The high resolution image url for a card.</li>
+<li>ability: A passive effect during battle. Also known as Poké-Powers and Poké-Bodies from older set. With the release of Black & White, all Pokémon Powers are known as Abilities.</li>
+<li>attacks: The attacks for a given card.</li>
+</p>
+<p>
+However, for this project we are using the following data:
+  <li>name</li>
+  <li>id as code</li>
+  <li>hp</li>
+  <li>attack</li>
+  <li>special</li>
+</p>
+<p>
+Also this application stores the player information and the pokemons each player can have.
+</p>
+<p>
+Here is the ERD:
+</p>
+<%=image_tag("ERDPokemonProject.png")%>
+<p>
+<%= link_to 'Back', root_path %>
+</p>

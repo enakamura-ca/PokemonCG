@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pokemons</h1>
+<%= form_tag(pokemons_path, method: 'get') do %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag("Search", name: nil) %>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Attack</th>
+      <th>HP</th>
+      <th>Special</th>
+      <th>ImageUrl</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @pokemons.nil? %>
+      No result found
+    <% else %>
+      <% Array(@pokemons).each do |pokemon| %>
+        <tr>
+          <td><%= pokemon.id %></td>
+          <td><%= pokemon.name %></td>
+          <td><%= pokemon.attack %></td>
+          <td><%= pokemon.hp %></td>
+          <td><%= pokemon.special %></td>
+          <td><%= pokemon.imageURL %></td>
+          <td><%= link_to 'Show', pokemon %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+<p>
+<%= link_to 'Back', root_path %>
+</p>
+<br>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url(assets/PokemonBackground.jpg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  text-align: center;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 16px;}
+}
+</style>
+</head>
+<body>
+  <div class="sidenav">
+    <%= link_to 'Home', root_path %>
+    <a href="/pages/about">About</a>
+    <%= link_to 'Players', controller: 'players' %>
+    <%= link_to 'Pokemon', controller: 'pokemons' %>
+    <%= link_to 'Players x Pokemons', controller: 'player_pokemons' %>
+    <% if @current_user %>
+      Logged in as <%= @current_user.username %>%
+      <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to 'Sign Up', signup_path %>
+      <%= link_to 'Login', login_path %>
+    <% end %>
+  </div>
+
+  <div class="main">
+    <h2>Welcome to Pokemon Card Game</h2>
+  </div>
+</body>
+</html>
